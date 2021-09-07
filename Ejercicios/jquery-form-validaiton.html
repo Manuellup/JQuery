@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./jquery-form-validation.css">
+</head>
+
+<body>
+    <form action="/my-handling-form-page" method="post">
+        <ul>
+            <li>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name">
+            </li>
+            <li>
+                <label for="mail">E-mail:</label>
+                <input type="email" id="mail" name="user_email">
+            </li>
+            <li>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </li>
+            <li class="button">
+                <button type="submit">Send</button>
+
+            </li>
+        </ul>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $('.button').click((event)=>{
+           event.preventDefault()
+           let hola = $('#name').val() === undefined
+           console.log(hola)
+           if($('#name').val() && $('#msg').val() && $('#mail').val()){
+                alert("mensaje enviado ")
+                $('#name').val("")
+                $('#msg').val("")
+                $('#mail').val("")
+           }else{
+                alert("Campos vacios")
+           }
+          
+        //    $(() => {
+        //     $( "form" ).on( "submit", function( event ) {
+        //     event.preventDefault();
+        //     $('form').find('input').each(function(index, elem){
+        //         if($(elem).val().length == 0){
+        //         if(index == 0){
+        //            $('#name-error').html("Campo de name vacio");
+        //         }
+        //         else{ 
+        //            $('#email-error').html("Campo de email vacio");
+        //         }
+        //         }
+        //     });
+        //     if($("#msg").val() == 0){
+        //         $('#msg-error').html("Campo de mensaje vacio");
+        //     }  
+        //     }); 
+            
+        
+    // });
+
+
+        })
+    </script>
+</body>
+
+</html>

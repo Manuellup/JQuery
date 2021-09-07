@@ -1,0 +1,62 @@
+<!-- obtener la lista de todos de  -->
+<!-- agregar los todos en una tabla  -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>jquery</title>
+
+    <link rel="stylesheet" href="./10.css" type="text/css" />
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Contenido</td>
+            <td>Status</td>
+        </tr>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script>
+        $(() => {
+         
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/todos",
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (todos) {
+                    for (const todo of todos) {
+                        let status = "Incompleted"
+                        let row;
+                        if (todo.completed) {
+                            status = "Completed"
+                            row = `<tr class="com"><td>${todo.id}</td><td>${todo.title}</td><td>${status}</td></tr>`
+                        }else{
+                            row = `<tr class="dom"><td>${todo.id}</td><td>${todo.title}</td><td>${status}</td></tr>`
+                        }
+
+                        
+                        $('table').append(row)
+
+
+                    }
+                },
+                error: function (result) {
+                    console.log("la llamada no se pudo completar");
+                },
+
+
+            });
+
+
+
+        })
+    </script>
+</body>
+
+</html>

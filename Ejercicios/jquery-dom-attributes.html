@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head >
+        <meta charset="utf-8">
+        <title>jquery</title>
+    </head>
+    <body>
+
+        <p id="parrafo1" clave="123" >Este es un parrafo</p>
+        <p id="parrafo2" clave="987" >Este es un parrafo</p>
+        <p id="parrafo3" clave="320" >Este es un parrafo</p>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+        <script>
+            $(()=>{
+
+                alert($('#parrafo1').get(2).getAttribute('clave'))
+            })
+        </script>
+    </body>
+</html>

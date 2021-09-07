@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Administrador de notas</title>
+</head>
+<body>
+<div class="Agregar-nota ">
+    <p>Titulo</p>
+    <input id="title" type="text" placeholder="Titulo de la nota" >
+    <p>Contenido</p>
+    <input id="content" type="text" placeholder="Contenido de la nota"><br>
+    <button id="send" type="submit" >Agregar nota</button>
+</div>
+
+<div class="desplegar-notas">
+    <table>
+        <thead>
+            <tr>
+                <th>Titulo</td>
+                <th>Contenido</td>
+                <th>Operaciones</td>
+            </tr>
+        </thead>
+        <tbody id="tablaNotas">
+            
+        </tbody>
+    </table>
+</div>
+
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="./admin-notes-jquery.js"></script>
+
+</body>
+</html>
